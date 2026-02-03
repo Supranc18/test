@@ -61,12 +61,12 @@ function App() {
   )
 }
 
-function LovePage({ goBack }) {
+function LovePage({ goBack }: { goBack: () => void }) {
   const photos = Array.from({ length: 9 }, (_, i) =>
     `/photos/photo${i + 1}.jpeg`
   )
 
-  const [selectedPhoto, setSelectedPhoto] = useState(null)
+  const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null)
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-rose-500 via-pink-500 to-red-600 p-6 relative">
